@@ -1,12 +1,10 @@
-/*	TODO: tasklist hinzufügen
-
-		test comment
-
+/*	
 	Name: CMD Shortcut Tool
 	Copyright: KeyboardNinja
 	Author: Lars
 	Date: 04.01.18 01:07
 	Description: CMD Syntax Management (Shortcut) Tool
+ 
 */
 #include <iostream>
 #include <windows.h>
