@@ -18,3 +18,4 @@ Befehlsparameter:
  - psr
  - net user administrator /active:yes || net user administrator /active:no
  - tasklist
+ - cleanmgr
