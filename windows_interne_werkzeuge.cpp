@@ -33,7 +33,8 @@ int main (){
 		 << ">>13. Windows(R) ShutdownTool \n"
 		 << ">>14. Windows(R) AufzeichnungsTool\n"
 		 << ">>15. Windows(R) Administratorkonto aktivieren/deaktivieren\n"
-		 << ">>16. Anzeigen von laufende Prozessen\n\n"
+		 << ">>16. Anzeigen von laufende Prozessen\n"
+		 << ">>17. Datentraegerbereinigung\n\n"
 		 << ">> Programm Beenden mit Eingabe eines Buchstaben oder der Taste 0\n\n";
 	
 	int x = 0, SD = 0, sct = 0;
@@ -70,7 +71,8 @@ int main (){
 										" - 1 Stunde {shutdown -s -t 3600}; 2 Stunden {shutdown -s -t 7200}; 3 Stunden {shutdown -s -t 10800}\n"
 										" - psr\n"
 										" - net user administrator /active:yes || net user administrator /active:no\n"
-										" - tasklist" // TODO
+										" - tasklist"
+										" - cleanmgr"
 										);
 									fclose(txt); //Datei Schliessen
 								txt = fopen("Information zum Programm.txt","r"); //Datei öffnen
@@ -169,11 +171,7 @@ int main (){
 				system("psr");
 				system("PAUSE");
 				continue;
-		}	if (x == 16){
-				system ("tasklist");
-				system ("PAUSE");
-		}
-			if (x == 15) {
+		}	if (x == 15) {
 				do {
 				printf("Administratorkonto Verwaltung\n\n");
 				cout << "1.) Administratorkonto aktivieren\n"
@@ -192,10 +190,17 @@ int main (){
 					break;
 				}
 				} while (sct);
-			} 
-		 
+		} 	if (x == 16){
+				system ("tasklist");
+				system ("PAUSE");
+				continue;
+		}	if (x == 17){
+				system ("cleanmgr");
+				system ("PAUSE");
+				continue;
+			}		 
 		
-		if ((x < 1)||(x > 15)){ 
+		if ((x < 1)||(x > 17)){ 
 				return 1;
 					}	
 				} while(x);
