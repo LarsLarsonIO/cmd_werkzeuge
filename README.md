@@ -1,4 +1,4 @@
-# Dieses Programm bedient sich ausschließlich der Integrierten CMD Befehls Parameter.
+# Dieses Programm bedient sich ausschließlich der von Windows integrierten Werkzeuge.
 Eine Liste der Befehle findet sich weiter unten.
 Um das Programm völlig zu nutzen empfiehlt es sich es als Administrator auszuführen.
 
