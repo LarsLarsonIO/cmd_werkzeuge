@@ -1,9 +1,10 @@
 /*	
-	Name: CMD Shortcut Tool
-	Copyright: KeyboardNinja
+	Name: Windows Interne Werkzeuge
+	Copyright: lolman
 	Author: Lars
 	Date: 04.01.18 01:07
-	Description: CMD Syntax Management (Shortcut) Tool
+	Update: 10.07.23
+	Description: ...
  
 */
 #include <iostream>
@@ -14,45 +15,50 @@
 using namespace std;
 
 int main (){
+
+	int x = 0, SD = 0, sct = 0;
+
 		system("title Windows [Werkzeuge]"); //Titel des Konsolen Programmes
 		system("color 02");
 		cout << "HAUPTMENUE \n"
-		 << "__________\n\n"
-		 << ">> 1. Information zur Benutzung <-----Bitte zuerst Lesen!!!\n\n"
-		 << ">> 2. IP-Sniffer(TCP/UDP) & Protokoll Erstellung \n"
-		 << ">> 3. IP-Protokoll aufrufen \n"
-		 << ">> 4. Windows(R) Systembewertungstool \n"
-		 << ">> 5. Windows(R) Leistungsueberwachung \n"
-		 << ">> 6. Windows(R) Speicherdiagnose \n"
-		 << ">> 7. Registrierungseditor GUI \n"
-		 << ">> 8. Registrierungseditor CMD \n"
-		 << ">> 9. Festplatten Scanner \n"
-		 << ">>10. Microsoft(R) Windows (R)-Ressourcenueberpruefungsprogramm \n"
-		 << ">>11. Windows(R) Autostart Einstellungen \n"
-		 << ">>12. Windows(R) Zeichentabelle Charmap \n"
-		 << ">>13. Windows(R) ShutdownTool \n"
-		 << ">>14. Windows(R) AufzeichnungsTool\n"
-		 << ">>15. Windows(R) Administratorkonto aktivieren/deaktivieren\n"
-		 << ">>16. Anzeigen von laufende Prozessen\n"
-		 << ">>17. Datentraegerbereinigung\n\n"
-		 << ">> Programm Beenden mit Eingabe eines Buchstaben oder der Taste 0\n\n";
-	
-	int x = 0, SD = 0, sct = 0;
-	
+			 << "__________\n\n"
+			 << ">> 1. Information zur Benutzung <-----Bitte zuerst Lesen!!!\n\n"
+			 << ">> 2. IP-Sniffer(TCP/UDP) & Protokoll Erstellung \n"
+			 << ">> 3. IP-Protokoll aufrufen \n"
+			 << ">> 4. Windows(R) Systembewertungstool \n"
+			 << ">> 5. Windows(R) Leistungsueberwachung \n"
+			 << ">> 6. Windows(R) Speicherdiagnose \n"
+			 << ">> 7. Registrierungseditor GUI \n"
+			 << ">> 8. Registrierungseditor CMD \n"
+			 << ">> 9. Festplatten Scanner \n"
+			 << ">>10. Microsoft(R) Windows (R)-Ressourcenueberpruefungsprogramm \n"
+			 << ">>11. Windows(R) Autostart Einstellungen \n"
+			 << ">>12. Windows(R) Zeichentabelle Charmap \n"
+			 << ">>13. Windows(R) ShutdownTool \n"
+			 << ">>14. Windows(R) AufzeichnungsTool\n"
+			 << ">>15. Windows(R) Administratorkonto aktivieren/deaktivieren\n"
+			 << ">>16. Anzeigen von laufende Prozessen\n"
+			 << ">>17. Datentraegerbereinigung\n\n"
+			 << ">> Programm Beenden mit Eingabe eines Buchstaben oder der Taste 0\n\n";
+
+		
 	do {
+
 		cout << ">>> ";
-		cin >> x;		
+		cin >> x;
+
 		if (cin.fail()){
 			return 1;
 		}
+
 		if (x == 1){
 			cout << "\n Informationen zum Programm \n\n";
 					FILE* txt; //Zeiger auf Datenstrom der Datei
 						txt = fopen("Information zum Programm.txt","w"); //Datei neu erzeugen bzw. überschreiben falls vorhanden
 							fprintf(txt,"CMD Management Info\n"
-										"___________\n\n"
+										"___________________\n\n"
 										"NUTZUNG DES PROGRAMMES AUF EIGENE GEFAHR! \n\n"
-										"Dieses Programm bedient sich ausschließlich der Integrierten CMD Befehls Parameter.\n"
+										"Dieses Programm bedient sich ausschließlich der Integrierten CMD Befehlsparameter.\n"
 										"Eine Liste der Befehle findet sich weiter unten.\n" //Ausgabe des Textes
 										"Um das Programm völlig zu nutzen empfiehlt es sich es als Administrator auszuführen.\n\n"
 										""
@@ -71,7 +77,7 @@ int main (){
 										" - 1 Stunde {shutdown -s -t 3600}; 2 Stunden {shutdown -s -t 7200}; 3 Stunden {shutdown -s -t 10800}\n"
 										" - psr\n"
 										" - net user administrator /active:yes || net user administrator /active:no\n"
-										" - tasklist"
+										" - tasklist\n"
 										" - cleanmgr"
 										);
 									fclose(txt); //Datei Schliessen
