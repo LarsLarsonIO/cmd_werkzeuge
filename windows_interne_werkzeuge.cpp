@@ -55,8 +55,8 @@ int main (){
 			cout << "\n Informationen zum Programm \n\n";
 					FILE* txt; //Zeiger auf Datenstrom der Datei
 						txt = fopen("Information zum Programm.txt","w"); //Datei neu erzeugen bzw. überschreiben falls vorhanden
-							fprintf(txt,"CMD Management Info\n"
-										"___________________\n\n"
+							fprintf(txt,"Windows Interne Werkzeuge\n"
+										"_________________________\n\n"
 										"NUTZUNG DES PROGRAMMES AUF EIGENE GEFAHR! \n\n"
 										"Dieses Programm bedient sich ausschließlich der Integrierten CMD Befehlsparameter.\n"
 										"Eine Liste der Befehle findet sich weiter unten.\n" //Ausgabe des Textes
