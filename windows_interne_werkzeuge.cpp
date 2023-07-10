@@ -1,6 +1,6 @@
 /*	
 	Name: Windows Interne Werkzeuge
-	Copyright: lolman
+	Copyright: none
 	Author: Lars
 	Date: 04.01.18 01:07
 	Update: 10.07.23
