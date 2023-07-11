@@ -3,7 +3,7 @@
 	Copyright: none
 	Author: Lars
 	Date: 04.01.18 01:07
-	Update: 10.07.23
+	Update: 11.07.23
 	Description: ...
  
 */
@@ -12,205 +12,215 @@
 #include <errno.h>
 #include <string.h>
 
-using namespace std;
-
 int main (){
 
-	int x = 0, SD = 0, sct = 0;
+	int eingabe, shutDown, adminkontoEingabe = 0;
 
-		system("title Windows [Werkzeuge]"); //Titel des Konsolen Programmes
+		system("title Windows [Werkzeuge]"); //Titel der Konsole
 		system("color 02");
-		cout << "HAUPTMENUE \n"
-			 << "__________\n\n"
-			 << ">> 1. Information zur Benutzung <-----Bitte zuerst Lesen!!!\n\n"
-			 << ">> 2. IP-Sniffer(TCP/UDP) & Protokoll Erstellung \n"
-			 << ">> 3. IP-Protokoll aufrufen \n"
-			 << ">> 4. Windows(R) Systembewertungstool \n"
-			 << ">> 5. Windows(R) Leistungsueberwachung \n"
-			 << ">> 6. Windows(R) Speicherdiagnose \n"
-			 << ">> 7. Registrierungseditor GUI \n"
-			 << ">> 8. Registrierungseditor CMD \n"
-			 << ">> 9. Festplatten Scanner \n"
-			 << ">>10. Microsoft(R) Windows (R)-Ressourcenueberpruefungsprogramm \n"
-			 << ">>11. Windows(R) Autostart Einstellungen \n"
-			 << ">>12. Windows(R) Zeichentabelle Charmap \n"
-			 << ">>13. Windows(R) ShutdownTool \n"
-			 << ">>14. Windows(R) AufzeichnungsTool\n"
-			 << ">>15. Windows(R) Administratorkonto aktivieren/deaktivieren\n"
-			 << ">>16. Anzeigen von laufende Prozessen\n"
-			 << ">>17. Datentraegerbereinigung\n\n"
-			 << ">> Programm Beenden mit Eingabe eines Buchstaben oder der Taste 0\n\n";
 
-		
+		std::cout << "\nHAUPTMENUE \n"
+			 	  << "__________\n\n"
+			 	  << ">>  1. Information zur Benutzung <----- Bitte zuerst Lesen!!!\n\n"
+			 	  << ">>  2. IP-Sniffer(TCP/UDP) + Protokoll  \n"
+			 	  << ">>  3. IP-Protokoll aufrufen \n"
+			 	  << ">>  4. Systembewertung (!zur Zeit keine Funktion!)\n"
+			 	  << ">>  5. Leistungsueberwachung \n"
+			 	  << ">>  6. Speicherdiagnose \n"
+			 	  << ">>  7. Registrierungseditor GUI \n"
+			 	  << ">>  8. Registrierungseditor CMD \n"
+			 	  << ">>  9. Festplatten Scanner \n"
+			 	  << ">> 10. Ressourcenueberpruefung \n"
+			 	  << ">> 12. Zeichentabelle Charmap \n"
+			 	  << ">> 13. Shutdown \n"
+			 	  << ">> 14. Aufzeichnung\n"
+			 	  << ">> 15. Administratorkonto aktivieren/deaktivieren\n"
+			 	  << ">> 16. Laufende Prozesse\n"
+			 	  << ">> 17. Datentraegerbereinigung\n\n"
+			 	  << ">> Programm Beenden mit Eingabe eines Buchstaben oder der Taste > 0 <\n\n";		
 	do {
+		std::cout << "\n\nEingabe: ";
+		std::cin >> eingabe;
 
-		cout << ">>> ";
-		cin >> x;
-
-		if (cin.fail()){
+		if (std::cin.fail()){
 			return 1;
 		}
 
-		if (x == 1){
-			cout << "\n Informationen zum Programm \n\n";
-					FILE* txt; //Zeiger auf Datenstrom der Datei
-						txt = fopen("Information zum Programm.txt","w"); //Datei neu erzeugen bzw. überschreiben falls vorhanden
+		if (eingabe == 1){
+			std::cout << "\nErstelle readme.txt "; 
+			for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
+				FILE* txt; //Zeiger auf Datenstrom der Datei
+					txt = fopen("readme.txt","w"); //Datei neu erzeugen bzw. überschreiben falls vorhanden
 							fprintf(txt,"Windows Interne Werkzeuge\n"
 										"_________________________\n\n"
 										"NUTZUNG DES PROGRAMMES AUF EIGENE GEFAHR! \n\n"
 										"Dieses Programm bedient sich ausschließlich der Integrierten CMD Befehlsparameter.\n"
-										"Eine Liste der Befehle findet sich weiter unten.\n" //Ausgabe des Textes
+										"Eine Liste der Befehle findet sich weiter unten.\n" //Ausgabe der Beschreibung
 										"Um das Programm völlig zu nutzen empfiehlt es sich es als Administrator auszuführen.\n\n"
-										""
 										"Befehlsparameter:\n"
-										" - netstat --> netstat -b 5 > 'Dateiname'.txt\n"
-										" - start 'Dateiname'.txt mit Editor\n"
-										" - winsat formal --> Get-WmiObject -Class Win32_WinSAT\n"
-										" - perfmon\n"
-										" - mdsched\n" 
-										" - regedit\n"
-										" - reg /?\n"
-										" - chkdsk C:\n"
-										" - sfc /scannow\n"
-										" - start shell:startup\n"
-										" - charmap\n"
-										" - 1 Stunde {shutdown -s -t 3600}; 2 Stunden {shutdown -s -t 7200}; 3 Stunden {shutdown -s -t 10800}\n"
-										" - psr\n"
-										" - net user administrator /active:yes || net user administrator /active:no\n"
-										" - tasklist\n"
-										" - cleanmgr"
+										" - (2) netstat --> netstat -b 5 > 'Dateiname'.txt\n"
+										" - (3) start 'Dateiname'.txt mit Editor\n"
+										" - (4) winsat formal --> Get-WmiObject -Class Win32_WinSAT\n"
+										" - (5) perfmon\n"
+										" - (6) mdsched\n" 
+										" - (7) regedit\n"
+										" - (8) reg /?\n"
+										" - (9) chkdsk C:\n"
+										" - (10) sfc /scannow\n"
+										" - (11) start shell:startup\n"
+										" - (12) charmap\n"
+										" - (13) 1 Stunde {shutdown -s -t 3600}; 2 Stunden {shutdown -s -t 7200}; 3 Stunden {shutdown -s -t 10800}\n"
+										" - (14) psr\n"
+										" - (15) net user administrator /active:yes || net user administrator /active:no\n"
+										" - (16) tasklist\n"
+										" - (17) cleanmgr"
 										);
 									fclose(txt); //Datei Schliessen
-								txt = fopen("Information zum Programm.txt","r"); //Datei öffnen
-							system("notepad.exe Information zum Programm.txt"); //Datei öffnen
+								txt = fopen("readme.txt","r"); //Datei öffnen
+							system("notepad.exe readme.txt"); //Datei öffnen
 						continue;
-		}	if (x == 2){
-				cout << "IP-Sniffer & Protokoll Erstellung wird gestartet... \n \n";
+		}	if (eingabe == 2){
+				std::cout << "\nIP-Sniffer & Protokollerstellung wird gestartet ";
+				for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
 				system(" powershell.exe netstat ");
-				system(" powershell.exe netstat -s -b 5 > Internet-Zugriff-Protokoll.txt ");
+				system(" powershell.exe netstat -s -b 5 > tcp-udp.txt ");
 				system("PAUSE");
 				continue;
-		}	if (x == 3){
-				cout << "Protokoll wird abgerufen... \n \n";
-				system("start Internet-Zugriff-Protokoll.txt ");
+		}	if (eingabe == 3){
+				std::cout << "\nProtokoll wird abgerufen ";
+				for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
+				system("start tcp-udp.txt  ");
 				system("PAUSE");
 				continue; 
-		}	if (x == 4){
-				cout << "Leistungs Index wird gestartet... \n \n";
-				system(" powershell.exe winsat formal ");
-				system(" powershell.exe Get-WmiObject -Class Win32_WinSAT  ");
-				system("PAUSE");
+		}	if (eingabe == 4){
+				std::cout << "\nzur Zeit keine Funktion! \nManuelle Eingabe mit > winsat formal < moeglich";
+				// std::cout << "\nLeistungsindex wird gestartet \n ";
+				// for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
+				// system(" powershell.exe winsat formal ");
+				// system(" powershell.exe Get-WmiObject -Class Win32_WinSAT  ");
+				// system("PAUSE");
 				continue;
-		}	if (x == 5){
-				cout << "Leistungsueberwachung wird gestartet... \n \n";
+		}	if (eingabe == 5){
+				std::cout << "\nLeistungsueberwachung wird gestartet ";
+				for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
 				system(" powershell.exe perfmon ");
 				system("PAUSE");
 				continue;
-		}	if (x == 6){
-				cout << "Speicherdiagnose wird gestartet... \n \n";
+		}	if (eingabe == 6){
+				std::cout << "\nSpeicherdiagnose wird gestartet ";
+				for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
 				system("powershell.exe mdsched");
 				system("PAUSE");
 				continue;
-		}	if (x == 7){
-				cout << "Registrierungs Editor wird gestartet.... \n \n";
+		}	if (eingabe == 7){
+				std::cout << "\nRegistrierungs Editor wird gestartet ";
+				for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
 				system("powershell.exe regedit");
 				system("PAUSE");
 				continue;
-		}	if (x == 8){
-				cout << "Registrierungseditor CMD wird gestartet..... \n";
+		}	if (eingabe == 8){
+				std::cout << "\nRegistrierungseditor CMD wird gestartet ";
+				for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
 				system("powershell.exe reg /?");
 				system("PAUSE");
 				continue;
-		}	if (x == 9){
-				cout << "Festplatten Scan CHKDSK wird gestartet... \n \n";
+		}	if (eingabe == 9){
+				std::cout << "\nFestplatten Scan CHKDSK wird gestartet ";
+				for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
 				system("powershell.exe chkdsk C:");
 				system("PAUSE");
 				continue;
-		}	if (x == 10){
-				cout << "Microsoft(R) Windows (R)-Ressourcenueberpruefungsprogramm wird gestartet... \n";
+		}	if (eingabe == 10){
+				std::cout << "\nRessourcenueberpruefung wird gestartet ";
+				for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
 				system("powershell.exe sfc /scannow");
 				system("PAUSE");
 				continue;
-		}	if (x == 11){
-				cout << "Windows Autostart Einstellungen wird gestartet... \n";
+		}	if (eingabe == 11){
+				std::cout << "\nAutostart Einstellungen wird geladen ";
+				for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
 				system("powershell.exe start shell:startup");
 				system("PAUSE");
 				continue;
-		}	if (x == 12){
-				cout << "Windows Zeichentabelle wird gestartet... \n";
+		}	if (eingabe == 12){
+				std::cout << "\nZeichentabelle wird gestartet ";
+				for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
 				system("powershell.exe charmap");
 				system("PAUSE");
 				continue;
-		}	if (x == 13){
+		}	if (eingabe == 13){
 				do {
-				printf("Shutdown\n");
-					cout << "_____________\n\n"
+					printf("\nShutdown\n");
+					std::cout << "_____________\n\n"
 						 << "1.) 1 Stunde\n"
 					 	 << "2.) 2 Stunden\n"
 					 	 << "3.) 3 Stunden\n"
 					 	 << "4.) Herunterfahren abbrechen \n\n"
 					 	 << "Shutdown in: ";
-					cin >> SD;
+					std::cin >> shutDown;
 				
-						if (SD == 1){
+						if (shutDown == 1){
 							system("shutdown -s -t 3600");
 							continue;
 						}
-						if (SD == 2){
+						if (shutDown == 2){
 							system("shutdown -s -t 7200");
 							continue;
 						}
-						if (SD == 3){
+						if (shutDown == 3){
 							system("shutdown -s -t 10800");
 							continue;
 						}
-						if (SD == 4){
+						if (shutDown == 4){
 							system("shutdown -a");
 							continue;
 						 
-						} if ((SD <  1) || (SD > 4)){
-							printf("cin.fail\n\n");
-							continue;
+						} if ((shutDown <  1) || (shutDown > 4)){
+							printf("std::cin.fail\n\n");
+							break;
 							} 					
-					} while (x);
-		}	if (x == 14){
+					} while (eingabe);
+		}	if (eingabe == 14){
 				system("psr");
 				system("PAUSE");
 				continue;
-		}	if (x == 15) {
+		}	if (eingabe == 15) {
 				do {
-				printf("Administratorkonto Verwaltung\n\n");
-				cout << "1.) Administratorkonto aktivieren\n"
-					 << "2.) Administratorkonto deaktivieren\n\n";
-				cin >> sct;
-				if (sct == 1) {
-					system("net user administrator /active:yes");
-					system("PAUSE");
-					continue;
-				} if (sct == 2) {
-					system("net user administrator /active:no");
-					system("PAUSE");
-					continue;
-				} if ((sct < 1) || (sct > 2)){
-					printf("cin.fail");
-					break;
-				}
-				} while (sct);
-		} 	if (x == 16){
+					printf("\nAdministratorkonto \n\n");
+					std::cout << "1.) Administratorkonto aktivieren\n"
+						 << "2.) Administratorkonto deaktivieren\n\n";
+					std::cin >> adminkontoEingabe;
+					  if (adminkontoEingabe == 1) {
+						system("net user administrator /active:yes");
+						system("PAUSE");
+						continue;
+					} if (adminkontoEingabe == 2) {
+						system("net user administrator /active:no");
+						system("PAUSE");
+						continue;
+					} if ((adminkontoEingabe < 1) || (adminkontoEingabe > 2)){
+							printf("std::cin.fail");
+							break;
+							}
+					} while (adminkontoEingabe);
+		} 	if (eingabe == 16){
+				std::cout << "\nTasklist wird gestartet ";
+				for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
 				system ("tasklist");
 				system ("PAUSE");
 				continue;
-		}	if (x == 17){
+		}	if (eingabe == 17){
+				std::cout << "\nDatentraegerbereinigung wird gestartet ";
+				for (int i = 0; i < 5; i++){ Sleep(300) ; std::cout << ".", "\n"; } // Ladesequenz
 				system ("cleanmgr");
 				system ("PAUSE");
 				continue;
-			}		 
-		
-		if ((x < 1)||(x > 17)){ 
+			}		
+		if ((eingabe < 1)||(eingabe > 17)){ 
 				return 1;
 					}	
-				} while(x);
-		cin.ignore();
-		cin.get();
-	return x; 
+				} while(eingabe);
+		std::cin.ignore();
+		std::cin.get();
+	return eingabe; 
 }
