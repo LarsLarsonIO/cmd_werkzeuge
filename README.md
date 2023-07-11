@@ -1,4 +1,7 @@
 # Dieses Programm bedient sich ausschließlich der von Windows integrierten Werkzeuge.
+
+Eine Installation ist nicht notwendig.
+
 Eine Liste der Befehle findet sich weiter unten.
 Um das Programm völlig zu nutzen empfiehlt es sich es als Administrator auszuführen.
 
