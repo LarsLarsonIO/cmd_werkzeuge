@@ -8,11 +8,7 @@
 
 	TODO:
 	Update P4 Systembewertung
-	Integrieren von WINGET
-
-	#####
-	test remote branch
-	#######
+	Integrieren von WINGET 
 */
 #include <iostream>
 #include <windows.h>
