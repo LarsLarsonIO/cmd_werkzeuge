@@ -5,7 +5,10 @@
 	Date: 04.01.18 01:07
 	Update: 11.07.23
 	Description: ...
- 
+
+	TODO:
+	Update P4 Systembewertung
+	Integrieren von WINGET
 */
 #include <iostream>
 #include <windows.h>
@@ -54,6 +57,7 @@ int main (){
 							fprintf(txt,"Windows Interne Werkzeuge\n"
 										"_________________________\n\n"
 										"NUTZUNG DES PROGRAMMES AUF EIGENE GEFAHR! \n\n"
+										"Keine Installation notwendig. \n\n"
 										"Dieses Programm bedient sich ausschließlich der Integrierten CMD Befehlsparameter.\n"
 										"Eine Liste der Befehle findet sich weiter unten.\n" //Ausgabe der Beschreibung
 										"Um das Programm völlig zu nutzen empfiehlt es sich es als Administrator auszuführen.\n\n"
