@@ -32,7 +32,7 @@ int main (){
 
 		// Konsolen Ausgabe
 		std::cout << "\nHAUPTMENUE \n"
-			 	  << "__________\n\n"
+			 	  << "##########\n\n"
 			 	  << ">>  1. Information zum Programm <----- Bitte zuerst Lesen!!!\n\n"
 			 	  << ">>  2. IP-Sniffer(TCP/UDP) + Protokoll  \n"
 			 	  << ">>  3. IP-Protokoll aufrufen \n"
