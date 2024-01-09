@@ -24,6 +24,6 @@ Befehlsparameter:
  - cleanmgr
  - powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
 
- # Getestete Betriebssysteme
- 
- Win10 x64 && Win11 x64
+ ## Getestete Betriebssysteme
+  Win10 x64
+  Win11 x64
