@@ -3,7 +3,7 @@
 Eine Installation ist nicht notwendig.
 
 Eine Liste der Befehle findet sich weiter unten.
-Um das Programm völlig zu nutzen empfiehlt es sich es als Administrator auszuführen.
+Um das Programm vollständig zu nutzen empfiehlt es sich es als Administrator auszuführen.
 
 Befehlsparameter:
  - netstat --> netstat -b 5 > 'Dateiname'.txt
